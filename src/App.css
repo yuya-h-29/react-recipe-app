@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fcd7a1;
+}
+
+.section {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.navbar {
+  background-color: rgb(228, 206, 206);
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  /* zindex makes fixed nav bar and other element go under the navbar */
+  z-index: 1;
+}
+
+.header {
+  background-color: rgb(177, 223, 177);
+  height: 200px;
+  margin-top: 80px;
+}
+
+.recipe {
+  background-color: rgb(232, 232, 186);
+  height: 300px;
+}
+
+/* Tablet Style */
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .recipe {
+    width: 50%;
+  }
+}
+
+/* Desktop Styles */
+
+@media only screen and (min-width: 961px) {
+  .App {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .recipe {
+    width: 33.3%;
+  }
+
+  .header {
+    height: 300px;
+  }
+}
