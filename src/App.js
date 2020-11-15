@@ -13,7 +13,7 @@ const App = () => {
   const APP_KEY = process.env.REACT_APP_KEY;
 
   // for using damy data, put aaa and bbb
-  const [recipes, setRecipes] = useState(["AAA", "BBB"]);
+  const [recipes, setRecipes] = useState(["AAA", "BBB", "CCCC", "DDDD"]);
 
   useEffect(() => {
     // getRecipes();
