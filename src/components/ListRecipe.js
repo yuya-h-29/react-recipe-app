@@ -20,7 +20,13 @@ const ListRecipe = (props) => {
         </div>
       </div>
 
-      <h3 id="recipe-title">{props.title}</h3>
+      <a className="recipe-link" href={props.recipeUrl}>
+        {props.title}
+      </a>
+
+      {/* <h3 id="recipe-title" onClick={() => {
+
+      }}>{props.title}</h3> */}
 
       {/* <p>{props.ingredients}</p>
       <p>{props.calories}</p>

@@ -9,7 +9,6 @@
 .recipe-image-container {
   position: relative;
   width: 90%;
-  border: 1px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +26,6 @@
 .recipe-info {
   opacity: 0;
   position: absolute;
-  border: 1px solid red;
   width: 80%;
   height: 80%;
   display: flex;
@@ -37,4 +35,15 @@
 
 .recipe-image-container:hover .recipe-info {
   opacity: 1;
+}
+
+.recipe-link:link,
+.recipe-link:visited {
+  color: #5d6063;
+  text-decoration: none;
+}
+
+.recipe-link:hover {
+  color: white;
+  text-decoration: underline;
 }

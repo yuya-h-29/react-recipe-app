@@ -40,6 +40,8 @@ const App = () => {
     "2 large russet potatoes, peeled and cut into chunks",
     "1 3-4 pound chicken, cut into 8 pieces",
   ];
+  const dlink =
+    "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html";
 
   return (
     <div className="App">
@@ -58,6 +60,7 @@ const App = () => {
             image={dimgurl}
             calories={dcal}
             ingredients={ding}
+            recipeUrl={dlink}
             // title={recipe.recipe.label}
             // ingredients={recipe.recipe.ingredientLines}
             // recipeUrl={recipe.recipe.url}
