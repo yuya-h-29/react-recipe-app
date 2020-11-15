@@ -11,10 +11,11 @@ const App = () => {
   const APP_ID = process.env.REACT_APP_ID;
   const APP_KEY = process.env.REACT_APP_KEY;
 
-  const [recipes, setRecipes] = useState([]);
+  // for using damy data, put aaa and bbb
+  const [recipes, setRecipes] = useState(["AAA", "BBB"]);
 
   useEffect(() => {
-    getRecipes();
+    // getRecipes();
   }, []);
 
   const getRecipes = async () => {
@@ -23,27 +24,36 @@ const App = () => {
     );
     const data = await response.json();
     setRecipes(data.hits);
+    // console.log(data.hits);
   };
 
-  const name = "YUYA";
+  const dimgurl =
+    "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg";
+  const dtitle = "Chicken Paprikash";
 
   return (
     <div className="App">
-      <div className="section navbar">
+      <div className="section navbar-container">
         <Navbar />
       </div>
 
-      <div className="section header">
+      <div className="section header-container">
         <InputRecipe />
       </div>
 
       {recipes.map((recipe) => (
-        <div className="section recipe">
-          <ListRecipe me={name} title={recipe.recipe.label} />
+        <div className="section recipe-container">
+          <ListRecipe
+            title={dtitle}
+            image={dimgurl}
+            // title={recipe.recipe.label}
+            // ingredients={recipe.recipe.ingredientLines}
+            // recipeUrl={recipe.recipe.url}
+            // calories={recipe.recipe.calories}
+            // image={recipe.recipe.image}
+          />
         </div>
       ))}
-
-      {/* {recipes.map(recipe => )} */}
     </div>
   );
 };

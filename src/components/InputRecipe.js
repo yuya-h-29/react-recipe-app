@@ -5,7 +5,7 @@ import "../css/InputRecipe.css";
 
 const InputRecipe = () => {
   return (
-    <div className="header-container">
+    <div className="header">
       <h1 className="header-title">あなただけのレシピを見つけよう</h1>
       <form className="search-form" action="">
         <input className="search-bar" type="text" placeholder="レシピを検索" />

@@ -19,7 +19,7 @@
   /* border: 1px solid black; */
 }
 
-.navbar {
+.navbar-container {
   background-color: rgb(228, 206, 206);
   height: 80px;
   position: fixed;
@@ -31,13 +31,13 @@
   z-index: 1;
 }
 
-.header {
+.header-container {
   background-color: rgb(177, 223, 177);
   height: 200px;
   margin-top: 80px;
 }
 
-.recipe {
+.recipe-container {
   background-color: rgb(232, 232, 186);
   height: 300px;
 }
@@ -45,7 +45,7 @@
 /* Tablet Style */
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
-  .recipe {
+  .recipe-container {
     width: 50%;
   }
 }
@@ -58,11 +58,11 @@
     margin: 0 auto;
   }
 
-  .recipe {
+  .recipe-container {
     width: 33.3%;
   }
 
-  .header {
+  .header-container {
     height: 300px;
   }
 }
