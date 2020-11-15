@@ -4,6 +4,18 @@ import React from "react";
 import "../css/ListRecipe.css";
 
 const ListRecipe = (props) => {
+  // functions
+  /* remove the detailed infromation of recipe ingredients (comes after ",") and return array contains 6 ingredients at most*/
+  const displayArrOf6Ingredients = (arr) => {
+    const arrOfIngredients = arr.map((ingredient) => ingredient.split(",")[0]);
+
+    const result = arrOfIngredients.length < 6 ? arr : arr.slice(0, 6);
+
+    console.log(result);
+
+    return result;
+  };
+
   return (
     <div className="recipe">
       <div className="recipe-image-container">
@@ -12,10 +24,9 @@ const ListRecipe = (props) => {
         <div className="recipe-info">
           <p className="recipe-calories">CALORIES: {props.calories}</p>
 
-          {/* remove the detailed infromation of recipe ingredients (comes after ",") and dispaly ingredients */}
           <p>INGREDIENTS</p>
-          {props.ingredients.map((ingredient) => (
-            <p className="recipe-ingredients">{ingredient.split(",")[0]}</p>
+          {displayArrOf6Ingredients(props.ingredients).map((ingredient) => (
+            <p className="recipe-ingredients">{ingredient}</p>
           ))}
         </div>
       </div>
@@ -23,14 +34,6 @@ const ListRecipe = (props) => {
       <a className="recipe-link" href={props.recipeUrl}>
         {props.title}
       </a>
-
-      {/* <h3 id="recipe-title" onClick={() => {
-
-      }}>{props.title}</h3> */}
-
-      {/* <p>{props.ingredients}</p>
-      <p>{props.calories}</p>
-      <p>{props.recipeUrl}</p> */}
     </div>
   );
 };

@@ -12,23 +12,38 @@ const App = () => {
   const APP_ID = process.env.REACT_APP_ID;
   const APP_KEY = process.env.REACT_APP_KEY;
 
-  // for using damy data, put aaa and bbb
-  const [recipes, setRecipes] = useState(["AAA", "BBB", "CCCC", "DDDD"]);
+  //States
+  // for using damy data, put aaa and bb
+  const [recipes, setRecipes] = useState([]);
+
+  const [search, setSearch] = useState("");
+
+  const [query, setQuery] = useState("rice");
 
   useEffect(() => {
-    // getRecipes();
-  }, []);
+    getRecipes();
+  }, [query]);
 
+  // functions
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=2`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=2`
     );
     const data = await response.json();
+    console.log("AAAAAAAAAAAAAA", data.hits);
     setRecipes(data.hits);
-    console.log(data.hits);
   };
 
-  //dummy data
+  const updateSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const getSearch = () => {
+    setQuery(search);
+    // setSearch("");
+  };
+
+  // dummy data
   const dimgurl =
     "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg";
   const dtitle = "Chicken Paprikash";
@@ -50,22 +65,23 @@ const App = () => {
       </div>
 
       <div className="section header-container">
-        <InputRecipe />
+        <InputRecipe updateSearch={updateSearch} getSearch={getSearch} />
       </div>
 
       {recipes.map((recipe) => (
         <div className="section recipe-container">
           <ListRecipe
-            title={dtitle}
-            image={dimgurl}
-            calories={dcal}
-            ingredients={ding}
-            recipeUrl={dlink}
-            // title={recipe.recipe.label}
-            // ingredients={recipe.recipe.ingredientLines}
-            // recipeUrl={recipe.recipe.url}
-            // calories={recipe.recipe.calories}
-            // image={recipe.recipe.image}
+            // key={recipe.recipe.label}
+            // title={dtitle}
+            // image={dimgurl}
+            // calories={dcal}
+            // ingredients={ding}
+            // recipeUrl={dlink}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            calories={recipe.recipe.calories}
+            ingredients={recipe.recipe.ingredientLines}
+            recipeUrl={recipe.recipe.url}
           />
         </div>
       ))}
