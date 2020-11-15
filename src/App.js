@@ -18,7 +18,7 @@ const App = () => {
 
   const [search, setSearch] = useState("");
 
-  const [query, setQuery] = useState("rice");
+  const [query, setQuery] = useState("meat");
 
   useEffect(() => {
     getRecipes();
@@ -30,17 +30,20 @@ const App = () => {
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=2`
     );
     const data = await response.json();
-    console.log("AAAAAAAAAAAAAA", data.hits);
     setRecipes(data.hits);
   };
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
+    console.log(search);
   };
 
   const getSearch = () => {
     setQuery(search);
+
+    //cannot clear the text field
     // setSearch("");
+    console.log(search);
   };
 
   // dummy data

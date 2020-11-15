@@ -1,0 +1,34 @@
+.navbar {
+  /* position: fixed; */
+  /* background-color: tomato; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.logo-image {
+  height: 80px;
+  margin-left: 50px;
+}
+
+.menu > li {
+  display: inline;
+  margin-right: 50px;
+}
+
+/* .menu > li:last-of-type {
+  margin-right: 50px;
+} */
+
+a:link,
+a:visited {
+  color: #5d6063;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

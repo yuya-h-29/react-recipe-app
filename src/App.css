@@ -20,7 +20,7 @@
 }
 
 .navbar-container {
-  background-color: rgb(228, 206, 206);
+  background-color: whitesmoke;
   height: 80px;
   position: fixed;
   width: 100%;
@@ -38,8 +38,8 @@
 }
 
 .recipe-container {
-  background-color: rgb(232, 232, 186);
-  height: 370px;
+  height: 100%;
+  /* border: 1px solid green; */
 }
 
 /* Tablet Style */

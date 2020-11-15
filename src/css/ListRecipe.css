@@ -1,21 +1,32 @@
 .recipe {
   display: flex;
-  height: 100%;
-  justify-content: space-evenly;
+  height: stretch;
+
+  /* add this */
+  max-width: 272px;
+
+  /* justify-content: space-around; */
   align-items: center;
   flex-direction: column;
+  /* border: 1px solid black; */
 }
 
 .recipe-image-container {
   position: relative;
   width: 90%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-top: 20px;
+
+  /* border: 1px solid pink; */
 }
 
 .recipe-image {
   width: 100%;
+
   border-radius: 20px;
 }
 
@@ -35,6 +46,16 @@
 
 .recipe-image-container:hover .recipe-info {
   opacity: 1;
+}
+
+.recipe-link {
+  width: 80%;
+  text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  /* border: 1px solid tomato; */
 }
 
 .recipe-link:link,

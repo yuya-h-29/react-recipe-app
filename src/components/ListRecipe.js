@@ -5,13 +5,16 @@ import "../css/ListRecipe.css";
 
 const ListRecipe = (props) => {
   // functions
-  /* remove the detailed infromation of recipe ingredients (comes after ",") and return array contains 6 ingredients at most*/
-  const displayArrOf6Ingredients = (arr) => {
+  /* remove the detailed infromation of recipe ingredients (comes after ",") and return array contains 4 ingredients at most*/
+  const displayArrOf4Ingredients = (arr) => {
     const arrOfIngredients = arr.map((ingredient) => ingredient.split(",")[0]);
 
-    const result = arrOfIngredients.length < 6 ? arr : arr.slice(0, 6);
+    console.log(arrOfIngredients);
 
-    console.log(result);
+    const result =
+      arrOfIngredients.length < 4
+        ? arrOfIngredients
+        : arrOfIngredients.slice(0, 4);
 
     return result;
   };
@@ -25,7 +28,7 @@ const ListRecipe = (props) => {
           <p className="recipe-calories">CALORIES: {props.calories}</p>
 
           <p>INGREDIENTS</p>
-          {displayArrOf6Ingredients(props.ingredients).map((ingredient) => (
+          {displayArrOf4Ingredients(props.ingredients).map((ingredient) => (
             <p className="recipe-ingredients">{ingredient}</p>
           ))}
         </div>
