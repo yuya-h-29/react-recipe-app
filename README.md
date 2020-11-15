@@ -23,6 +23,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Future Feature
+
+Develop backend and enable to store your favorite recipes.
+I'll use node.js and postgreSQL.
+
 ## Built With
 
 - React.js
