@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import InputRecipe from "./components/InputRecipe";
 import ListRecipe from "./components/ListRecipe";
 
+//import css
 import "./App.css";
 
 const App = () => {

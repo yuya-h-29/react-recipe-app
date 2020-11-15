@@ -1,11 +1,24 @@
-/* .recipe-container {
-  height: 100%;
+.recipe {
   width: 100%;
-  background-color: blue;
-  border: 3px solid black;
-} */
+  height: 100%;
+  border: 1px solid black;
+
+  /* margin-bottom: 10px; */
+  background-color: rgb(193, 193, 220);
+  /* display: block; */
+}
 
 .recipe img {
-  width: 100%;
-  /* border: 3px solid black; */
+  width: 90%;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+#recipe-title {
+  /* display: block; */
+  margin-top: 20px;
+  text-align: center;
 }
